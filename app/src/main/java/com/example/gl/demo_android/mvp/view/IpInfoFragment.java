@@ -39,6 +39,13 @@ public class IpInfoFragment extends Fragment implements IpInfoContract.View{
         bt_ipinfo= (Button) root.findViewById(R.id.bt_ipinfo);
         return root;
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mPresenter.unsubscribe();
+    }
+
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mDialog=new ProgressDialog(getActivity());

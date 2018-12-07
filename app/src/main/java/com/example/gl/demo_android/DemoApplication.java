@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.example.gl.demo_android.dagger.AppComponent;
 import com.example.gl.demo_android.dagger.DaggerAppComponent;
+import com.example.gl.demo_android.mvp.net.DaggerNetTaskComponent;
+import com.example.gl.demo_android.mvp.net.NetTaskComponent;
+import com.example.gl.demo_android.mvp.net.NetTaskModule;
 import com.example.gl.demo_android.utils.DemoLog;
 
 import cn.finalteam.okhttpfinal.OkHttpFinal;
@@ -13,7 +16,8 @@ public class DemoApplication extends Application {
 
     private static DemoApplication application;
 
-    AppComponent appComponent;
+    private AppComponent appComponent;
+    private NetTaskComponent netTaskComponent;
 
     @Override
     public void onCreate() {
@@ -27,6 +31,12 @@ public class DemoApplication extends Application {
         //dagger2全局单例
         appComponent = DaggerAppComponent.builder().build();
         DemoLog.daggerLog("appComponent="+appComponent);
+
+        //MVP模式的单例
+        netTaskComponent = DaggerNetTaskComponent
+                .builder()
+                .netTaskModule(new NetTaskModule())
+                .build();
     }
 
     public static DemoApplication getInstance() {
@@ -35,5 +45,9 @@ public class DemoApplication extends Application {
 
     public AppComponent getAppComponent() {
         return appComponent;
+    }
+
+    public NetTaskComponent getNetTaskComponent() {
+        return netTaskComponent;
     }
 }

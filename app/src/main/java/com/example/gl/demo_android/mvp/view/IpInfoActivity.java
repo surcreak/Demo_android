@@ -3,13 +3,17 @@ package com.example.gl.demo_android.mvp.view;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.gl.demo_android.DemoApplication;
 import com.example.gl.demo_android.R;
-import com.example.gl.demo_android.mvp.net.IpInfoTask;
 import com.example.gl.demo_android.mvp.presenter.IpInfoPresenter;
 import com.example.gl.demo_android.mvp.util.ActivityUtils;
 
+import javax.inject.Inject;
+
 public class IpInfoActivity extends AppCompatActivity {
-    private IpInfoPresenter ipInfoPresenter;
+
+    @Inject
+    IpInfoPresenter ipInfoPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +25,15 @@ public class IpInfoActivity extends AppCompatActivity {
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
                     ipInfoFragment, R.id.contentFrame);
         }
-        IpInfoTask ipInfoTask = IpInfoTask.getInstance();
-        ipInfoPresenter = new IpInfoPresenter(ipInfoTask, ipInfoFragment);
-        ipInfoFragment.setPresenter(ipInfoPresenter);
+        //IpInfoTask ipInfoTask = IpInfoTask.getInstance();
+        //ipInfoPresenter = new IpInfoPresenter(ipInfoTask, ipInfoFragment);
+        //ipInfoFragment.setPresenter(ipInfoPresenter);
+
+        DaggerIpInfoComponent
+                .builder()
+                .ipInfoModule(new IpInfoModule(ipInfoFragment))
+                .netTaskComponent(DemoApplication.getInstance().getNetTaskComponent())
+                .build()
+                .inject(this);
     }
 }

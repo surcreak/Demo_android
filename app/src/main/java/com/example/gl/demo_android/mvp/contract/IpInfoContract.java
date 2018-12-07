@@ -1,10 +1,11 @@
 package com.example.gl.demo_android.mvp.contract;
 
+import com.example.gl.demo_android.mvp.base.BasePresenter;
 import com.example.gl.demo_android.mvp.base.BaseView;
 import com.example.gl.demo_android.mvp.model.IpInfo;
 
 public interface IpInfoContract {
-    interface Presenter{
+    interface Presenter extends BasePresenter {
         void getIpInfo(String ip);
     }
 

@@ -1,5 +1,7 @@
 package com.example.gl.demo_android.mvp.net;
 
+import io.reactivex.disposables.Disposable;
+
 public interface NetTask<T> {
-    void execute(T data, LoadTasksCallBack callBack);
+    Disposable execute(T data, LoadTasksCallBack callBack);
 }

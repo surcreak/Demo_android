@@ -5,18 +5,33 @@ import com.example.gl.demo_android.mvp.model.IpInfo;
 import com.example.gl.demo_android.mvp.net.LoadTasksCallBack;
 import com.example.gl.demo_android.mvp.net.NetTask;
 
+import javax.inject.Inject;
+
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+
 public class IpInfoPresenter implements IpInfoContract.Presenter, LoadTasksCallBack<IpInfo> {
     private NetTask netTask;
     private IpInfoContract.View addTaskView;
+    private CompositeDisposable mDisposables;
+    private Disposable disposable;
 
+    @Inject
     public IpInfoPresenter(NetTask netTask, IpInfoContract.View addTaskView) {
         this.netTask = netTask;
         this.addTaskView = addTaskView;
+        mDisposables = new CompositeDisposable();
+    }
+
+    @Inject
+    void setPresenter() {
+        addTaskView.setPresenter(this);
     }
 
     @Override
     public void getIpInfo(String ip) {
-        netTask.execute(ip, this);
+        disposable = netTask.execute(ip, this);
+        subscribe();
     }
 
     @Override
@@ -45,6 +60,20 @@ public class IpInfoPresenter implements IpInfoContract.Presenter, LoadTasksCallB
     public void onFinish() {
         if (addTaskView.isActive()) {
             addTaskView.hideLoading();
+        }
+    }
+
+    @Override
+    public void subscribe() {
+        if (disposable != null) {
+            mDisposables.add(disposable);
+        }
+    }
+
+    @Override
+    public void unsubscribe() {
+        if (mDisposables != null) {
+            mDisposables.dispose();
         }
     }
 }
