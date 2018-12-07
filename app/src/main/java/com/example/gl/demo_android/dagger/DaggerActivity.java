@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.gl.demo_android.DemoApplication;
 import com.example.gl.demo_android.R;
-import com.example.gl.demo_android.utils.Loger;
+import com.example.gl.demo_android.utils.DemoLog;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -19,6 +19,7 @@ import dagger.Lazy;
 public class DaggerActivity extends AppCompatActivity {
 
     //简单用法
+    //注入对象不能是private
     @Inject
     Watch watch;
 
@@ -56,12 +57,12 @@ public class DaggerActivity extends AppCompatActivity {
 
         String jsonData = "{'name':'zhangwuji', 'age':20}";
         Man man = gson.fromJson(jsonData, Man.class);
-        Loger.d("man="+man);
+        DemoLog.daggerLog("man="+man);
 
-        Loger.d("car run "+car.run());
+        DemoLog.daggerLog("car run "+car.run());
 
-        Loger.d("gson.hashCode()="+gson.hashCode());
-        Loger.d("gson1.hashCode()="+gson1.hashCode());
+        DemoLog.daggerLog("gson.hashCode()="+gson.hashCode());
+        DemoLog.daggerLog("gson1.hashCode()="+gson1.hashCode());
 
         watchLazy.get().work();
     }

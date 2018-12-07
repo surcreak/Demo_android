@@ -1,17 +1,27 @@
 project.ext {
     version = [
+            androidSupportSdkVersion: "28.0.0",
             butterknifeVersion      :"8.5.1",
             daggerVersion           :"2.16",
-            gsonVersion             :"2.8.5"
+            gsonVersion             :"2.8.5",
+            okhtttpfinalVersion     :"2.0.7",
+            constraintlayoutVersion :"1.1.3"
     ]
 
     dependencies = [
+            "support-v4"                : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "appcompat-v7"              : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+
+            "constraint-layout"         :"com.android.support.constraint:constraint-layout:${version["constraintlayoutVersion"]}",
+
             "butterknife"               :"com.jakewharton:butterknife:${version["butterknifeVersion"]}",
             "butterknife-compiler"      :"com.jakewharton:butterknife-compiler:${version["butterknifeVersion"]}",
 
             "dagger"                    :"com.google.dagger:dagger:${version["daggerVersion"]}",
             "dagger-compiler"           :"com.google.dagger:dagger-compiler:${version["daggerVersion"]}",
 
-            "gson"                      :"com.google.code.gson:gson:${version["gsonVersion"]}"
+            "gson"                      :"com.google.code.gson:gson:${version["gsonVersion"]}",
+
+            "okhttpfinal"               :"cn.finalteam:okhttpfinal:${version["okhtttpfinalVersion"]}"
     ]
 }

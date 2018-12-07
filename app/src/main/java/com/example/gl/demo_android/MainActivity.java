@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.example.gl.demo_android.dagger.DaggerActivity;
-import com.example.gl.demo_android.utils.Loger;
+import com.example.gl.demo_android.mvp.view.IpInfoActivity;
+import com.example.gl.demo_android.utils.DemoLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.dagger)
     public void startDaggerActivity() {
-        Loger.d("startDaggerActivity");
+        DemoLog.daggerLog("startDaggerActivity");
         startActivity(new Intent(this, DaggerActivity.class));
+    }
+
+    @OnClick(R.id.mvp)
+    public void startMvpActivity() {
+        startActivity(new Intent(this, IpInfoActivity.class));
     }
 }

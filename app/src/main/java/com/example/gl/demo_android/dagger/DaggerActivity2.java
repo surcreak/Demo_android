@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.gl.demo_android.DemoApplication;
 import com.example.gl.demo_android.R;
-import com.example.gl.demo_android.utils.Loger;
+import com.example.gl.demo_android.utils.DemoLog;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -28,6 +28,6 @@ public class DaggerActivity2 extends AppCompatActivity {
                 .build()
                 .inject(this);
 
-        Loger.d("DaggerActivity2 --> gaon.hashCode()="+gson.hashCode());
+        DemoLog.daggerLog("DaggerActivity2 --> gaon.hashCode()="+gson.hashCode());
     }
 }
