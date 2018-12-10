@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.example.gl.demo_android.mvvm.model.SwordsMan"
+            alias="fakeman" />
+        <import type="com.example.gl.demo_android.mvvm.SwordsMan"
+            alias="realSwordsMan" />
+        <import type="android.view.View" />
+        <import type="java.util.ArrayList" />
+        <import type="java.util.Map" />
+        <variable
+            name="fakeMan"
+            type="fakeman" />
+        <variable
+            name="swordsman"
+            type="realSwordsMan" />
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="age"
+            type="int" />
+        <variable
+            name="man"
+            type="boolean" />
+        <variable
+            name="list"
+            type="ArrayList&lt;String&gt;" />
+        <variable
+            name="map"
+            type="Map&lt;String,String&gt;" />
+        <variable
+            name="arrays"
+            type="String[]" />
+    </data>
+
+    <!-- error: duplicate attribute-->
+    <!-- 我们要将根布局变成layout，还要去掉根布局的width和height-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@{swordsman.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@{swordsman.level}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt_layout"
+            android:text="updata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@{name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@{String.valueOf(age)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@{String.valueOf(man)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{list.get(1)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{map.get(`age`)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{arrays[1]}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{`Age:`+String.valueOf(age)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="三目运算符"
+            android:visibility="@{man?View.VISIBLE:View.GONE}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/bt_recycle"
+            android:text="recycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

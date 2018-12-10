@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--java.net.UnknownServiceException: CLEARTEXT communication to ip.taobao.com not permitted by network security policy-->
+    <!--android:usesCleartextTraffic="true" 可以使用明文-->
     <application
         android:name=".DemoApplication"
         android:allowBackup="true"
@@ -33,6 +35,18 @@
         <activity
             android:name=".mvp.view.IpInfoActivity"
             android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".mvvm.MvvmDemoActivity"
+            android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".mvvm.MvvmDemoActivityUpdata"
+            android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".mvvm.MvvmDemoActivityRecycleView"
+            android:launchMode="singleTop" >
 
         </activity>
     </application>

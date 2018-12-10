@@ -2,4 +2,7 @@
     <string name="app_name">Demo_android</string>
     <string name="dagger">dagger</string>
     <string name="dagger2">dagger2</string>
+    <string name="mvp">MVP</string>
+    <string name="mvvm2">mvvm2</string>
+    <string name="mvvm">mvvm</string>
 </resources>

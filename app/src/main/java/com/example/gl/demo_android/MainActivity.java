@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.example.gl.demo_android.dagger.DaggerActivity;
 import com.example.gl.demo_android.mvp.view.IpInfoActivity;
+import com.example.gl.demo_android.mvvm.MvvmDemoActivity;
 import com.example.gl.demo_android.utils.DemoLog;
 
 import butterknife.BindView;
@@ -34,5 +35,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.mvp)
     public void startMvpActivity() {
         startActivity(new Intent(this, IpInfoActivity.class));
+    }
+
+    @OnClick(R.id.mvvm)
+    public void startMvvmActivity() {
+        startActivity(new Intent(this, MvvmDemoActivity.class));
     }
 }

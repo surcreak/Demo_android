@@ -2,6 +2,7 @@ package com.example.gl.demo_android.mvp.net;
 
 import com.example.gl.demo_android.mvp.model.IpInfo;
 import com.example.gl.demo_android.utils.DemoLog;
+import com.example.gl.demo_android.utils.OkHttpUtil;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -13,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class IpInfoTask implements NetTask<String> {
 
-    private static final String HOST = "http://ip.taobao.com/service/getIpInfo.php/";
+    private static final String HOST = "http://ip.taobao.com/service/";
 
     public IpInfoTask() {
         createRetrofit();
@@ -34,6 +35,7 @@ public class IpInfoTask implements NetTask<String> {
                 .baseUrl(HOST)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(OkHttpUtil.getOkHttpClient())
                 .build();
     }
 
@@ -98,5 +100,6 @@ public class IpInfoTask implements NetTask<String> {
 //                callBack.onFailed();
 //            }
 //        });
+//        return null;
     }
 }

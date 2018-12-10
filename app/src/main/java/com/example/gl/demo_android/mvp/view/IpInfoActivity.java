@@ -19,6 +19,7 @@ public class IpInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ipinfo);
+        setTitle(R.string.mvp);
         IpInfoFragment ipInfoFragment = (IpInfoFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if (ipInfoFragment == null) {
             ipInfoFragment = IpInfoFragment.newInstance();

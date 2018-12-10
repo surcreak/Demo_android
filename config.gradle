@@ -7,12 +7,14 @@ project.ext {
             okhtttpfinalVersion     :"2.0.7",
             constraintlayoutVersion :"1.1.3",
             retrofitSdkVersion      : "2.5.0",
-            okhttpSdkVersion        : "3.12.0"
+            okhttpSdkVersion        : "3.12.0",
+
     ]
 
     dependencies = [
             "support-v4"                        : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
             "appcompat-v7"                      : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "recyclerview"                      : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
 
             "constraint-layout"                 : "com.android.support.constraint:constraint-layout:${version["constraintlayoutVersion"]}",
 

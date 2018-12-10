@@ -66,7 +66,7 @@ public class IpInfoPresenter implements IpInfoContract.Presenter, LoadTasksCallB
     @Override
     public void subscribe() {
         if (disposable != null) {
-            mDisposables.add(disposable);
+            //mDisposables.add(disposable);
         }
     }
 
