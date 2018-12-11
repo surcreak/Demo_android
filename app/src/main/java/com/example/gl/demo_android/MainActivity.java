@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.example.gl.demo_android.asynclistutil.AsyncListUtilActivity;
 import com.example.gl.demo_android.dagger.DaggerActivity;
 import com.example.gl.demo_android.mvp.view.IpInfoActivity;
 import com.example.gl.demo_android.mvvm.MvvmDemoActivity;
@@ -40,5 +41,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.mvvm)
     public void startMvvmActivity() {
         startActivity(new Intent(this, MvvmDemoActivity.class));
+    }
+
+    @OnClick(R.id.asynclistutil)
+    public void startAsyncListUtilActivity() {
+        startActivity(new Intent(this, AsyncListUtilActivity.class));
     }
 }

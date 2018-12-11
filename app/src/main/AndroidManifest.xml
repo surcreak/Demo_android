@@ -49,6 +49,14 @@
             android:launchMode="singleTop" >
 
         </activity>
+        <activity android:name=".rxpermissions.RxpermissionsDemoActivity"
+            android:launchMode="singleTop" >
+
+        </activity>
+        <activity android:name=".asynclistutil.AsyncListUtilActivity"
+            android:launchMode="singleTop">
+
+        </activity>
     </application>
 
 </manifest>

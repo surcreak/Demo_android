@@ -24,6 +24,10 @@ public class DemoLog implements HttpLoggingInterceptor.Logger {
     public static void okhttpLog(String s) {
         Log.d("gaol okthhp", s);
     }
+    public static void AsyncListUtilLog(String s) {
+        Log.d("gaol AsyncListUtilLog", s);
+    }
+
 
     public static void mvvmLog(String s) {
         Log.d("gaol mvvm", s);
