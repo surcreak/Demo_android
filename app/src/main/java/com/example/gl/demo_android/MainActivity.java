@@ -9,6 +9,7 @@ import com.example.gl.demo_android.asynclistutil.AsyncListUtilActivity;
 import com.example.gl.demo_android.dagger.DaggerActivity;
 import com.example.gl.demo_android.mvp.view.IpInfoActivity;
 import com.example.gl.demo_android.mvvm.MvvmDemoActivity;
+import com.example.gl.demo_android.paging.PagingActivity;
 import com.example.gl.demo_android.utils.DemoLog;
 
 import butterknife.BindView;
@@ -46,5 +47,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.asynclistutil)
     public void startAsyncListUtilActivity() {
         startActivity(new Intent(this, AsyncListUtilActivity.class));
+    }
+
+    @OnClick(R.id.paging)
+    public void startPagingActivity() {
+        startActivity(new Intent(this, PagingActivity.class));
     }
 }

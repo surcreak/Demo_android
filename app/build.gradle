@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -38,9 +41,11 @@ dependencies {
 
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    kapt rootProject.ext.dependencies["butterknife-compiler"]
 
     implementation rootProject.ext.dependencies["dagger"]
     annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    kapt rootProject.ext.dependencies["dagger-compiler"]
 
     implementation rootProject.ext.dependencies["gson"]
 
@@ -58,4 +63,27 @@ dependencies {
 
     implementation rootProject.ext.dependencies["okhttp3"]
     implementation rootProject.ext.dependencies["okhttp3-logging-interceptor"]
+
+    implementation rootProject.ext.dependencies["paging"]
+    implementation rootProject.ext.dependencies["paging-common"]
+    implementation rootProject.ext.dependencies["paging-rx"]
+
+
+    implementation rootProject.ext.dependencies["glide"]
+    kapt rootProject.ext.dependencies["glide-compiler"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+
+    implementation rootProject.ext.dependencies["room-rx"]
+    implementation rootProject.ext.dependencies["room"]
+    kapt rootProject.ext.dependencies["room-compiler"]
+    annotationProcessor rootProject.ext.dependencies["room-compiler"]
+
+    implementation rootProject.ext.dependencies["lifecycle"]
+    kapt rootProject.ext.dependencies["lifecycle-compiler"]
+    annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

@@ -33,6 +33,10 @@ public class DemoLog implements HttpLoggingInterceptor.Logger {
         Log.d("gaol mvvm", s);
     }
 
+    public static void pagingLog(String log) {
+        Log.d("gaol paging", log);
+    }
+
     @Override
     public void log(String message) {
         Log.d("gaol okhttp", message);
