@@ -7,10 +7,10 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.gl.demo_android"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.version.minSdkVersion
+        targetSdkVersion rootProject.ext.version.targetSdkVersion
+        versionCode rootProject.ext.version.versionCode
+        versionName rootProject.ext.version.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -83,6 +83,8 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation project(':module:demo_view')
 }
 repositories {
     mavenCentral()

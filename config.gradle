@@ -1,5 +1,14 @@
 project.ext {
+
+    //true 每个业务Module可以单独开发
+    //false 每个业务Module以lib的方式运行
+
     version = [
+            minSdkVersion           : 16,
+            targetSdkVersion        : 28,
+            versionCode             : 1,
+            versionName             : "1.0",
+
             androidSupportSdkVersion: "28.0.0",
             butterknifeVersion      :"8.5.1",
             daggerVersion           :"2.16",
