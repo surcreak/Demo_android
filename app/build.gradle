@@ -84,7 +84,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation project(':module:demo_view')
+    implementation project(':demo_view')
 }
 repositories {
     mavenCentral()

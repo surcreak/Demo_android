@@ -1,1 +1,1 @@
-include ':app', ':module:demo_view', ':module_app:demo_view_app'
+include ':app', ':demo_view', ':demo_view_app', ':common'
