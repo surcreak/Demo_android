@@ -39,6 +39,10 @@ public class DemoLog  {
         Log.d("gaol viewlog_keyguard", log);
     }
 
+    public static void viewlog_decoration(String log) {
+        Log.d("gaol viewlog_decoration", log);
+    }
+
     private static class DemoLogHolder {
         private static final DemoLog sInstence = new DemoLog();
     }

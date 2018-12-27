@@ -6,13 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.demo_view.GestureKeyGuard
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btGestureKeyGuard"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="GestureKeyGuard"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btItemDecoration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ItemDecoration"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btGestureKeyGuard" />
 
 </android.support.constraint.ConstraintLayout>
